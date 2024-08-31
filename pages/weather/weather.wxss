@@ -1,0 +1,122 @@
+/* pages/weather/weather.wxss */
+.container{
+  min-height: 100%;
+  width: 100%;
+  padding: 2vh 3vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: -webkit-linear-gradient(top, #3d395a, #435f6d);
+  color: white;
+}
+
+.one{
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  padding: 10rpx;
+}
+
+.place{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.place image{
+  width: 40rpx;
+  height: 40rpx;
+}
+
+/* two */
+.two{
+  margin-top: 50rpx;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 10rpx;
+  
+}
+
+
+.two image{
+  width: 320rpx;
+  height: 320rpx;
+}
+
+.a{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* three */
+.three{
+  width: 100%;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 10rpx;
+}
+
+.t {
+  margin-top: 40rpx;
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap; /* 允许多行布局 */
+  justify-content: space-around; /* 水平居中分布 */
+  align-items: flex-start; /* 垂直顶部对齐 */
+  padding-bottom: 75rpx;
+  background-color: rgba(0, 0, 0, 0.1);
+  border-radius: 5px; /* 使容器的边缘变得圆润 */
+  border-radius: 20rpx;
+}
+
+.tt {
+  width: 30%; /* 每个卡片宽度为父容器的30%，保证每行三列 */
+  margin-top: 50rpx;
+  display: flex;
+  flex-direction:  column;
+  justify-content: center; /* 垂直居中 */
+  align-items: center; /* 水平居中 */
+  text-align: center; /* 文字居中 */
+  border-right: rgba(248, 247, 247, 0.1);
+}
+
+
+.advice {
+  color: #ffffff; /* 白色 */
+  padding: 10px; /* 为容器添加内边距 */
+  background-color: rgba(0, 0, 0, 0.1);
+  border-radius: 5px; /* 使容器的边缘变得圆润 */
+  margin: 10px 0; /* 设置外边距 */
+}
+
+
+/* 标题样式 */
+.the_container1 {
+  display: flex; /* 使用 Flexbox 布局 */
+  align-items: center; /* 垂直居中对齐 */
+}
+
+
+.icon1 {
+  font-size: 60rpx; /* 设置图标的字体大小 */
+}
+
+
+.text1 {
+  font-size: 45rpx; /* 设置文本的字体大小，与图标一致 */
+}
+
+
+.the_container2 {
+  margin-top: 20rpx;
+  display: flex; /* 使用 Flexbox 布局 */
+  align-items: center; /* 垂直居中对齐 */
+}
+
+

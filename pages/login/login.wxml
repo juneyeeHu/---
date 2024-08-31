@@ -1,0 +1,22 @@
+<view class="box">
+  <!--登录字样-->
+  <view class="login-text">
+    <text>登录</text>
+  </view>
+  <!--账号-->
+  <view class="user">
+    <image src="/images/dialogue/user.png"></image>
+    <input name="userName" placeholder="请输入手机号" auto-focus="true" bindinput="InputUser" />
+  </view>
+  <!--密码-->
+  <view class="password">
+    <image src="/images/dialogue/password.png"></image>
+    <input name="userName" placeholder="请输入密码" auto-focus="true" bindinput="InputPassword" type="password"/>
+  </view>
+  <!--登录按钮-->
+  <button class="login-button" bind:tap="login">登录</button>
+  <!--去注册-->
+  <view class="register" bind:tap="toRegister">
+    <text>去注册</text>
+  </view>
+</view>

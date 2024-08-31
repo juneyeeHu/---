@@ -1,0 +1,101 @@
+<!--pages/map/map.wxml-->
+<map 
+id="myMap"
+longitude="{{defaultLongitude}}" latitude="{{defaultLatitude}}" 
+scale="{{defaultScale}}" min-scale="{{minScale}}" max-scale="{{maxScale}}" 
+style='height:{{windowHeight}}px' 
+markers="{{stores}}" 
+subkey="{{mapSubKey}}" 
+show-compass="true" 
+show-location="true" 
+bindpoitap="poiTap">
+</map>
+
+<!-- 底部浮桥 -->
+<view class="nav"  show="{{!popup.popupShow}}" >
+  <view class="nav-tabbar">
+    
+    <view class="nav-button" bindtap='getMyLocation'>
+      <van-icon name="location-o" color="#4789EC" size="50rpx"/>
+      <view>我的位置</view>
+    </view>
+
+    <view class="add"></view>
+
+    <view class="nav-button" bindtap="getTargetLocation">
+      <van-icon name="ellipsis" color="#4789EC" size="50rpx"/>
+      <view>目标景点</view>
+    </view>
+  </view>   
+</view>
+
+  <!-- 悬浮的小泉 -->
+<view class="postion-add" bindtap='toQuan'>
+  <van-icon name="service-o" color="#4789EC" size="55rpx"/>
+  <view>晓泉</view>
+</view>
+
+<van-popup
+show="{{popup.popupShow}}"
+closeable
+round
+position="bottom"
+custom-style="height: {{ popup.detail ? '670rpx' :'400rpx'}}"
+bind:close="popupOnClose">
+  <view class="popup_container">
+    <!-- 景点名和距离 -->
+    <view class="view_up">
+      <view class="inline1"></view>
+      <view class="inline2">{{popup.title}}</view>
+      <view class="inline3" style="color:#b2bbbe;">距离您<text style="color: #feba07;">{{popup.dis}}</text>米</view>
+    </view>
+    <!-- 图片，内容 -->
+    <view class="view_down">
+      <!-- 图片 -->
+      <view class="inline4">
+        <van-image wx:if="{{!popup.detail}}"  height="100%" width="105%" 
+        src ='{{popup.src}}'/>
+        <van-image wx:if="{{popup.detail}}" height="235rpx" width="235rpx" 
+        src ='{{popup.src}}'/>
+      </view>
+      <!-- 内容 -->
+      <view class="inline5">
+        <view wx:if="{{!popup.detail}}" class="van-multi-ellipsis--l3" style="color:#b2bbbe;">{{popup.description}}</view>
+        <view wx:if="{{popup.detail}}" style="overflow-x: scroll;height:380rpx; color:#b2bbbe;">{{popup.description}}</view>
+      </view>
+    </view>
+    <!-- 按钮 -->
+    <view class="{{popup.detail?'popup_button2':'popup_button1'}}">
+      <van-button wx:if="{{!popup.detail}}" round color="#feba07" bind:click="popupButtonClick2" style="margin: 0 15rpx 0 0;" >
+        <van-icon name="more-o" size="35rpx"/>  详情讲解
+      </van-button>
+      <van-button round color="#feba07" bind:click="popupButtonClick">
+        <van-icon name="map-marked" size="35rpx"/>去这里
+      </van-button>
+    </view>
+    <!-- 播放器 -->
+    <audio style="display:none" src="{{current.src}}"    action="{{audioAction}}" bindplay="audioPlayed" bindtimeupdate="audioTimeUpdated" controls></audio>
+    <view wx:if="{{popup.detail}}">
+      <progress class="progress" percent="{{current.progress}}" show-info border-radius="15rpx" stroke-width="16rpx" font-size="26rpx" activeColor="#feba07">
+      </progress>
+      <!--快退按钮 -->
+      <van-button class="progress2" round type="info" color="#feba07" plain bindtap="promm">快退</van-button>
+      <!-- 播放暂停按钮 -->
+      <van-button wx:if="{{!current.played}}" class="progress3" round type="info" plain color="#feba07" bindtap="playAudio">播放</van-button>
+      <van-button wx:if="{{current.played}}" class="progress3" round type="info" plain color="#feba07" bindtap="pauseAudio">暂停</van-button>
+      <!-- 快进按钮 -->
+      <van-button class="progress4" round type="info" plain color="#feba07" bindtap="propp">快进</van-button>
+    </view>
+
+
+    
+  </view>
+
+</van-popup>
+
+<view class="weather-icon" bindtap="goToWeatherPage">
+  <image src="/images/icon/今日天气.svg" style = "width: 150rpx; height: 100rpx">
+  <text style="margin-top: 10px; color: #feba07">今日天气</text>
+  </image>
+</view>
+

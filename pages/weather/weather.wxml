@@ -1,0 +1,76 @@
+<!--  -->
+<view class="container">
+<view class="one">
+   <view class="place">
+      <van-icon name="location" />
+      <text style="font-size: 30rpx;font-weight: 500;padding-right: 15rpx;color: white;">{{city}}-{{district}}区</text>
+   </view>
+   <view class="time">
+       <text>更新时间{{time}}</text>
+   </view>
+</view>
+
+<view class="two">
+    <view class="detail">
+       <view class="a">
+         <text style="font-size: 80rpx;font-weight: 500;padding-right: 15rpx;color: rgb(236, 52, 5);">{{temp}}℃</text>
+         <text>{{tianqi}}</text>
+       </view>
+       <view class="b">
+         <text>{{fengxiang}}{{dengji}}级</text>
+         <text>|</text>
+         <text>湿度为{{humidity}}</text>
+       </view>
+    </view>
+    <image src="/pages/weather/wea_pic/QWeather-Icons-1.1.0/1.1.0/icons/{{icon}}.svg" mode=""/>
+</view>
+
+<view class="three">
+ <!-- 区分1 -->
+ <view class="t">
+            <view class="tt">
+              <image src="/pages/weather/pic/水滴.svg" mode="" style="width: 50rpx; height: 50px;"/>
+                <text style="color: lightgreen;">{{jiangshui}}mm</text>
+                <text>降水量</text>
+            </view>
+            <view class="tt">
+              <image src="/pages/weather/pic/气压.svg" mode=""style="width: 50rpx; height: 50px;"/>
+                <text style="color: lightgreen">{{pa}}pa</text>
+                <text>大气压</text>
+            </view>
+            <view class="tt">
+              <image src="/pages/weather/pic/能见度.svg" mode=" "style="width: 50rpx; height: 50px;"/>
+                <text style="color: lightgreen">{{see}}KM</text>
+                <text>能见度</text>
+            </view>
+            <view class="tt">
+              <image src="/pages/weather/pic/穿衣指数.svg" mode=" "style="width: 50rpx; height: 50px;filter: brightness(0) invert(1);"/>
+                <text style="color: lightgreen">{{chuanyi}}</text>
+                <text>穿衣指数</text>
+            </view>
+            <view class="tt">
+              <image src="/pages/weather/pic/紫外线.svg" mode=" "style="width: 50rpx; height: 50px;"/>
+                <text style="color: lightgreen">{{ziwaixian}}</text>
+                <text>紫外线强度</text>
+            </view>
+            <view class="tt">
+              <image src="/pages/weather/pic/运动指数.svg" mode=" "style="width: 50rpx; height: 50px;filter: brightness(0) invert(1);"/>
+                <text style="color: lightgreen">{{yundong}}</text>
+                <text>运动指数</text>
+            </view>
+</view>
+        <view class="advice">
+          <view class="the_container1">
+            <text class="text1">穿衣与防护建议:</text>
+          </view>
+          <view class="the_container2">
+            <van-icon name="star-o" class="icon1"></van-icon>
+           <text class="text2">{{advice1}}</text>
+          </view>
+          <view class="the_container2">
+            <van-icon name="bulb-o" class="icon1"/>
+           <text class="text2">{{advice2}}</text>
+          </view>
+        </view>
+</view>
+</view>

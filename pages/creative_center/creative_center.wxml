@@ -1,0 +1,45 @@
+<swiper class="shop-swiper" autoplay="true" interval="3000" duration="500" indicator-dots="true">
+    <block wx:for="{{imageUrls}}" wx:key="index">
+      <swiper-item>
+        <image class="shop-image" src="{{item}}" mode="aspectFill"></image>
+      </swiper-item>
+    </block>
+</swiper>
+<!-- <view class="container"> -->
+  <view class="shop-details">
+    <view class="shop-name-container">
+      <image class="icon" src="景点.png"></image>
+      <text class="shop-name">天下第一泉文创中心</text>
+    </view>
+    <view class="shop-address-container">
+      <image class="icon_addr" src="位置.png"></image>
+      <text class="shop-address">趵突泉南路一号趵突泉景区内婵英祠东</text>
+    </view>
+    <view bindtap="openLocation" class="location-container">
+      <image class="icon" src="方向.png"></image>
+      <text class="location-text">点击导航到这里去</text>
+    </view>
+  </view>
+  <view class="menu-item" style="margin-top: 8px;">
+  <view class="vertical-line"></view>
+  <text style="font-weight: bold;">文创产品</text>
+</view>
+  <view class="horizontal-line"></view>
+<view class="products-section">
+    <view class="product" wx:for="{{products}}" wx:key="id">
+      <view class="product-container">
+        <image class="product-image" src="{{item.image}}"></image>
+        <view class="product-info">
+          <view class="info-item">
+            <image class="icon" src="礼品.png"></image>
+            <text class="product-name">{{item.name}}</text>
+          </view>
+          <view class="info-item">
+            <text class="product-description">{{item.description}}</text>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+
+<!-- </view> -->

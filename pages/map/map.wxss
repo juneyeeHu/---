@@ -1,0 +1,167 @@
+/* pages/map/map.wxss */
+map {
+  width: 750rpx;
+}
+
+.popup_container{
+  height:90%;
+  margin: 26rpx 5% 14rpx 5%;
+  display: flex;
+  flex-direction:column;
+}
+
+.view_up{
+  height: 11%;
+  display: flex;
+  flex-direction:row;
+  margin: 0 0 3% 0;
+}
+
+.inline1{
+  width: 1.5%;
+  background-color: #feba07;
+}
+
+.inline2{
+  width: 50%;
+  color: #feba07;
+  margin: 0 3% 0 3%;
+}
+
+.inline3{
+  width: 35%;
+  margin: 0 3% 0 3%;
+  text-align: right;
+}
+
+.view_down{
+  height: 80%;
+  display:flex;
+  flex-direction:row;
+}
+
+.inline4{
+  width:36%;
+}
+
+.inline5{
+  width:64%;
+  margin: 0 0 0 5%;
+  position: relative;
+}
+
+.popup_button1 {  
+  position: absolute; /* 设置为绝对定位 */  
+  bottom: 19.5%; /* 贴紧容器底部 */  
+  right: 5%; /* 贴紧容器右侧 */  
+}  
+
+.popup_button2 {  
+  position: absolute; /* 设置为绝对定位 */  
+  bottom: 34%; /* 贴紧容器底部 */  
+  left: 9%; /* 贴紧容器右侧 */  
+}  
+
+.nav {
+  position: absolute;
+  width: 300px;
+  left: calc(50% - 150px);
+  bottom: 100rpx;
+  background-color: rgb(255, 255, 255);
+  border-radius: 50rpx;
+  box-shadow: 3px 3px 2px #bbbcbc;
+}
+
+.nav-tabbar {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+
+.nav-button {
+  height: 100rpx;
+  width: 180rpx;
+  font-size: 25rpx;
+  text-align: center;
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.add {
+  width: 60px;
+  height: 60px;
+  font-size: 25rpx;
+  color: #fff;
+  background-color: white;
+  border-radius: 50%;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.nav-tabbar-image {
+  width: 20px;
+  height: 20px;
+  margin-bottom: 3px;
+}
+
+
+.postion-add {
+  position: absolute;
+  left: calc(50% - 35px);
+  bottom: 47px;
+  width: 70px;
+  height: 70px;
+  font-size: 25rpx;
+  color: #fff;
+  background-color: #feba07;
+  border-radius: 50%;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.progress{
+  margin-bottom: 80rpx;
+}
+
+
+.progress2{
+  position: absolute;
+  bottom:10%;
+  left: 7%;
+}
+
+.progress3{
+  position: absolute;
+  left: 42%;
+  bottom:10%
+}
+
+.progress4{
+  position: absolute;
+  left: 76%;
+  bottom:10%
+}
+
+.weather-icon {
+  position: absolute;
+  top: 40rpx;
+  left: 20rpx;
+  z-index: 999;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+
+

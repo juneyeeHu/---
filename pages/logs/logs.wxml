@@ -1,0 +1,50 @@
+<view class="container1">
+<view class="title">
+  <image class="icon-title" src="/images/logs/logs.svg"/>
+<text>日志记录</text>
+<button class="share-button" open-type="share">
+        <image class="share-icon" src="/images/logs/share.svg"></image>
+      </button>
+</view>
+<view class="content">
+  <block wx:if="{{userData.qa.length > 0}}">
+    <view class="section">
+      <view class="menu-item" style="margin-top: 8px;">
+        <view class="vertical-line"></view>
+        <text>问答记录</text>
+      </view>
+      <block wx:for="{{userData.qa}}" wx:key="*this">
+        <view class="qa-record">
+          <view class="qa-item">
+            <image class="icon" src="/images/logs/question.svg" />
+            <text class="qa-question">问题：{{item.question}}</text>
+          </view>
+          <view class="horizontal-line"></view>    
+          <view class="qa-item">
+            <image class="icon" src="/images/logs/icon_answer.svg"/>
+            <text class="qa-answer">回答：{{item.answer}}</text>    
+          </view>
+        </view>
+      </block>
+    </view>
+  </block>
+  
+  <block wx:if="{{userData.photos.length > 0}}">
+    <view class="section">
+      <view class="menu-item" style="margin-top: 8px;">
+        <view class="vertical-line"></view>
+        <text>拍摄的照片</text>
+      </view>
+      <view class="qa-record">
+      <scroll-view scroll-x="true" class="photo-scroll-view">
+        <view class="photos">
+          <block wx:for="{{userData.photos}}" wx:key="*this">
+            <image class="photo" src="{{item}}" mode="aspectFit" bindtap="previewImage" data-src="{{item}}" />
+          </block>
+        </view>
+      </scroll-view>
+    </view>
+  </view>
+  </block>
+</view>
+</view>

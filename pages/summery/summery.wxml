@@ -1,0 +1,16 @@
+<!-- <view class="container" bindtap="startAnimation"> -->
+  <view class="animation-container" bindtap="startAnimation">
+    <view animation="{{textAnimation}}" class="animated-text">
+      {{summary}}
+    </view>
+    <!-- <image src="https://img.zcool.cn/community/01glvavl2o8xrk7difovg73731.jpg?x-oss-process=image/auto-orient,1/resize,m_lfit,w_1280,limit_1/sharpen,100" animation="{{imageAnimation1}}" class="animated-image"></image>
+    <image src="https://bpic.588ku.com/art_water_pic/20/09/08/15840673551bc878a3bf25ebdf4159b9.jpg" animation="{{imageAnimation2}}" class="animated-image"></image> -->
+    <!-- <button class="view-button" bindtap="startAnimation">立即查看</button>
+  </view> -->
+  </view>
+<!-- </view> -->
+
+<!-- <view class="container">
+  <lottie-animation animation-data="{{animationData}}"></lottie-animation>
+</view> -->
+

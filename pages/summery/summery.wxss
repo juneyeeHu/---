@@ -1,0 +1,68 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  align-items: center;
+  justify-content: center;
+  background-color: #f8f8f8;
+}
+
+.header {
+  padding: 16px;
+  background-color: #f44336;
+  color: white;
+  width: 100%;
+  text-align: center;
+}
+
+.title {
+  font-size: 20px;
+  font-weight: bold;
+}
+
+/* .animation-container {
+  position: relative;
+  width: 100%;
+  height: 500px;
+  background: url('https://th.bing.com/th/id/OIP.MWoNRAJYv3fFnr-8tBIU_wHaNJ?w=187&h=333&c=7&r=0&o=5&dpr=1.5&pid=1.7') no-repeat center center;
+  background-size: cover;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+} */
+.animation-container {
+  position: relative;
+  width: 100%;
+  height: 100vh; /* 使背景图片覆盖整个视口高度 */
+  background: url('https://pic.5tu.cn/uploads/allimg/2111/pic_5tu_big_6326010_059db3c11519f6cac49145e0b264b60c.jpg') no-repeat center center;
+  background-size: cover;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.animated-text {
+  font-size: 22px;
+  color: rgb(53, 131, 98);
+  text-align: center;
+  margin-bottom: 20px;
+  margin-left: 20rpx;
+  margin-right: 20rpx;
+}
+
+.animated-image {
+  width: 100px;
+  height: 100px;
+  margin: 10px;
+}
+
+.view-button {
+  background-color: white;
+  color: #f44336;
+  border: 2px solid #f44336;
+  border-radius: 25px;
+  padding: 10px 20px;
+  font-size: 16px;
+}

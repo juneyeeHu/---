@@ -1,0 +1,83 @@
+/* pages/login/login.wxss */
+/**父组件*/
+.box {
+  margin-top: 10vh;
+}
+
+.login-text {
+  margin-left: 5vh;
+  margin-top: 1vh;
+}
+
+.login-text text {
+  font-size: 6vh;
+}
+
+.user {
+  height: 6vh;
+  margin-top: 3vh;
+  margin-right: 5vh;
+  margin-left: 5vh;
+  border-radius: 5vh;
+  background-color: rgb(248, 248, 248);
+  display: flex;
+  flex-direction: row;
+}
+
+.user image {
+  margin-top: 1vh;
+  margin-left: 1vh;
+  height: 4vh;
+  width: 4vh;
+}
+
+.user input {
+  margin-top: 1vh;
+  height: 4vh;
+  width: 30vh;
+  margin-left: 2vh;
+}
+
+.password {
+  height: 6vh;
+  margin-top: 3vh;
+  margin-right: 5vh;
+  margin-left: 5vh;
+  border-radius: 5vh;
+  background-color: rgb(248, 248, 248);
+  display: flex;
+  flex-direction: row;
+}
+
+.password image {
+  margin-top: 1vh;
+  margin-left: 1vh;
+  height: 4vh;
+  width: 4vh;
+}
+
+.password input {
+  margin-top: 1vh;
+  height: 4vh;
+  width: 30vh;
+  margin-left: 2vh;
+}
+
+.login-button {
+  height: 5vh;
+  background-color: rgb(75, 233, 75);
+  margin-top: 3vh;
+  margin-left: 5vh;
+  margin-right: 5vh;
+  border-radius: 5vh;
+  font-size: 2vh;
+}
+
+.register {
+  margin-top: 1vh;
+  margin-left: 5vh;
+}
+
+.register text {
+  color: rgb(38, 144, 177);
+}

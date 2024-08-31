@@ -1,0 +1,54 @@
+<!-- gifdrag.wxml -->
+<movable-area style="width: 100%; height: 100%;">
+    <movable-view class="gif" x="140" y="600" direction="all" bindtap="navigateToAnotherPage">
+    <image class="gif" src="{{link}}" mode="aspectFit"></image>
+    </movable-view>
+<!-- 上方的轮播图 -->
+<swiper class="swiper-container" indicator-dots indicator-color="#fff" autoplay interval="3000" circular>
+    <swiper-item wx:for="{{ swiperlist }}" wx:key="id">
+      <view class="swiper-item">
+        <image src="{{ item.path }}" mode="aspectFill"></image>
+      </view>
+    </swiper-item>
+  </swiper>
+<!-- 功能陈列区 -->
+<view class="function-list">
+  <navigator class="function-item" wx:for="{{function_list}}" wx:key="id" url="{{ item.url }}?userId={{user}}">
+        <view class="content-container">
+          <image class="content-image" src="{{item.icon}}"style="width: 50rpx; height: 50px;"></image>
+          <text class="content-text">{{item.name}}</text>
+        </view>
+  </navigator>
+</view>
+  <!-- 搜索过滤区 -->
+  <view class="input-area">
+    <input placeholder="{{text}}" value="{{msg}}" bindinput="inputHandler"></input>
+    <van-button plain type="info" bindtap="searchAttractions">搜索</van-button>
+  </view>
+
+  <!-- 小提示过渡区 -->
+  <view class="select">
+    <view class="element">
+      <van-icon name="fire-o" class="select1-icon"></van-icon>
+      <text class="select-text" style="margin-right: 300rpx">热门景点</text>
+      <van-icon name="location-o" class="select2-icon" bindtap="refreshDistance"></van-icon>
+      <text bindtap="refreshDistance">点击刷新距离</text>
+    </view>
+  </view>
+
+  <!-- 陈列景观区 -->
+  <scroll-view class="scroll-view-container" scroll-y>
+    <view class="grid-list">
+      <navigator class="grid-item" wx:for="{{result.length > 0 ? result : gridList}}" wx:key="id" url="/pages/map/map?longitude={{item.view_longitude}}&latitude={{item.view_latitude}}">
+        <view class="image-container">
+          <image class="grid-image" src="{{item.image}}"></image>
+          <view class="text-overlay">
+            <van-icon name="location-o" class="image-icon"></van-icon>
+            <text class="image-text">{{ item.distance }}m</text>
+          </view>
+        </view>
+        <text class="grid-text">{{item.name}}</text>
+      </navigator>
+    </view>
+  </scroll-view>
+  </movable-area>

@@ -1,0 +1,38 @@
+
+  <view class="background-container">
+    <image class="background-image" src="{{backgroundImage}}" mode="widthFix"></image>
+  </view>
+
+  <view class="overlay-container">
+    <image class="avatar" src="{{userInfo.avatar}}"></image>
+    <text class="name art-font">{{userInfo.name}}</text> <!-- 这里应用了艺术字体样式 -->
+    <!-- <text class="name">{{userInfo.name}}</text> -->
+    <!-- <view class="details">
+      <view class="detail-item">
+        <text class="label">金</text>
+        <text class="value">{{userInfo.gold}}</text>
+      </view>
+      <view class="detail-item">
+        <text class="label">卡券</text>
+        <text class="value">{{userInfo.coupons}}</text>
+      </view>
+      <view class="detail-item">
+        <text class="label">余额</text>
+        <text class="value">{{userInfo.balance}}</text>
+      </view>
+    </view> -->
+  </view>
+
+  <scroll-view class="news-list" scroll-y="true">
+    <view class="news-item" wx:for="{{news}}" wx:key="id" bindtap="openArticle" data-url="{{item.url}}">
+      <view class="news-content-box">
+        <image class="news-image" src="{{item.image}}"></image>
+        <view class="news-content">
+          <view class="news-title">{{item.title}}</view> <!-- 使用 view 元素 -->
+          <view class="news-summary">{{item.summary}}</view>
+          <view class="news-date">{{item.date}}</view> <!-- 使用 view 元素 -->
+        </view>
+      </view>
+    </view>
+  </scroll-view>
+

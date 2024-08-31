@@ -1,0 +1,72 @@
+<!-- 消息提示框 -->
+<van-notify id="van-notify" />
+<van-dialog id="van-dialog" />
+
+<!--对话框模块-->
+<scroll-view scroll-y class="box" scroll-top="{{scroll_top}}">
+  <view wx:for="{{ dialogue }}" wx:key="id">
+    <!--用户发出的信息-->
+    <view class="user-dialogue" wx:if="{{ item.flag == 1 }}">
+      <!--对话气泡-->
+      <view class="user-bubble">
+        <text wx:if="{{ item.type == 1 }}">{{ item.content }}</text>
+        <!--如果有图片且有文字内容-->
+        <view wx:else if="{{ item.type == 0 }}" class="user-both">
+          <text>{{ item.content }}</text>
+          <image src="{{ item.url }}" mode="widthFix"></image>
+        </view>
+      </view>
+      <!--对话框的尖角-->
+      <view class="angle-right"></view>
+      <!--用户的头像-->
+      <view class="user-image" bind:tap="history">
+        <image class="user-image-img" src="{{ user_img }}"></image>
+      </view>
+    </view>
+
+    <!--AI回复的信息-->
+    <view class="ai-dialogue" wx:if="{{ item.flag == 0 }}">
+      <!--ai机器人的头像-->
+      <view class="ai-image" bind:tap="history">
+        <image class="ai-image-img" src="{{ ai_img }}"></image>
+      </view>
+      <!--对话框的尖角-->
+      <view class="angle-left"></view>
+      <!--对话气泡-->
+      <view class="ai-bubble">
+        <text>{{ item.content }}</text>
+      </view>
+    </view>
+  </view>
+</scroll-view>
+
+
+<!--下方的输入框-->
+<view class="input" style="{{'bottom:'+KeyboardHeight+'px; position: fixed;'}}">
+  <!--上传图片的内容-->
+  <view class="input-picture" bind:tap="open_camera">
+    <image src="/images/dialogue/camera.png"></image>
+  </view>
+  <!--语音识别-->
+  <view class='input-voice' bind:longpress="startRecord" bind:touchend="stopRecord">
+    <image src="/images/dialogue/voice.png"></image>
+  </view>
+  <!--输入条-->
+  <scroll-view class="input-textarea" scroll-y>
+    <textarea placeholder="请输入内容"bindinput="bindInput" value="{{msg}}" ></textarea>
+  </scroll-view>
+  <!--发送按钮-->
+  <button class="input-button" bind:tap="sendMsg">发送</button>
+</view>
+
+<!--录音的时候的表示符号-->
+<view wx:if="{{ isRecording }}" class="recorder">
+  <text>正在录音</text>
+  <image src="/images/dialogue/recorder.png"></image>
+</view>
+
+<!--显示图像的略缩图-->
+<view wx:if="{{ isImage }}" class="tempImage">
+  <button bind:tap="cancelImage">取消上传</button>
+  <image src="{{ tempImagePath }}" mode="widthFix"></image>
+</view>

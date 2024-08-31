@@ -1,0 +1,204 @@
+<view class="container">
+        <view class="tabs">
+            <view class="tab {{currentTab == 0 ? 'active' : ''}}" bindtap="switchTab" data-index="0">游玩须知</view>
+            <view class="tab {{currentTab == 1 ? 'active' : ''}}" bindtap="switchTab" data-index="1">服务设施</view>
+            <view class="tab {{currentTab == 2 ? 'active' : ''}}" bindtap="switchTab" data-index="2">交通攻略</view>
+        </view> 
+        <!-- <view class="tabs">
+            <view class="tab" onclick="switchTab(0)">游玩须知</view>
+            <view class="tab" onclick="switchTab(1)">服务设施</view>
+            <view class="tab" onclick="switchTab(2)">交通攻略</view>
+        </view> -->
+        <scroll-view scroll-y="true" class="content" scroll-into-view="{{toView}}">
+            <view id="section0" class="section">          
+                <view class="section-header">
+                    <image src="/images/travel_tips/time.svg" class="section-icon" />
+                    <text class="section-title">开放时间</text>
+                </view>
+                <view class="section-content">
+                    <view class="info">
+                        <text class="info-detail">*最佳游玩时间：四季皆宜</text>
+                    </view>
+                    <view class="info">
+                        <text class="info-detail">*建议游玩时长：2-3小时</text>
+                    </view>
+                    <view class="policy-table">
+                        <view class="policy-row header">
+                            <text class="header-cell">时间段</text>
+                            <text class="header-cell">日期</text>
+                            <text class="header-cell">开放时间</text>
+                        </view>
+                        <view class="policy-row">
+                            <text>周一至周日</text>
+                            <text>1月1日至10月9日</text>
+                            <text>07:00-19:00，19:00停止入场</text>
+                        </view>
+                </view>
+                    <view class="info-note">以上信息仅供参考，具体以当日实际公示信息为准</view>
+                </view>
+               
+            </view>
+
+            <!-- 优待政策部分 -->
+            <view class="section" >
+              <view class="section-header">
+                    <image src="/images/travel_tips/service.svg" class="section-icon" />
+                    <text class="section-title">优待政策</text>
+                </view>
+                <!-- <view class="section-title"><image src="/images/travel_tips/service.svg" class="section-icon"/>优待政策</view> -->
+                <view class="content" scroll-with-animation="true">
+                    <view class="policy-table">
+                        <view class="policy-row header">
+                            <text class="header-cell">适用人群</text>
+                            <text class="header-cell">限制条件</text>
+                        </view>
+                        <view class="policy-row">
+                            <text>老年人</text>
+                            <text>60周岁（含）以上凭老年优待证或身份证</text>
+                        </view>
+                        <view class="policy-row">
+                            <text>儿童</text>
+                            <text>6周岁（含）以下或身高1.4米（含）以下凭身份证或户口本</text>
+                        </view>
+                        <view class="policy-row">
+                            <text>记者、人民警察</text>
+                            <text>凭国家广电总局制记者证、人民警察证</text>
+                        </view>
+                        <view class="policy-row">
+                            <text>导游</text>
+                            <text>凭国家旅游局制电子导游证</text>
+                        </view>
+                        <view class="policy-row">
+                            <text>济南市无偿献血荣誉卡</text>
+                            <text>持卡本人</text>
+                        </view>
+                        <view class="policy-row">
+                            <text>临夏州市民</text>
+                            <text>凭本人身份证或户口本免费政策执行时间为2021年9月1日至2025年12月31日</text>
+                        </view>
+                        <view class="policy-row">
+                            <text>消防救援人员、消防救援院校学员</text>
+                            <text>凭有效证件</text>
+                        </view>
+                        <view class="policy-row">
+                            <text>三属人员</text>
+                            <text>凭有效身份证件烈士、因公牺牲军人和病故军人的配偶、父母和抚养人、子女，以及由其承担抚养义务的兄弟姐妹</text>
+                        </view>
+                    </view>
+                </view>
+            </view>
+
+            <!-- 服务设施部分 -->
+            <view id="section1" class="section">
+                <!-- <view class="section-title"> <image src="/images/travel_tips/service.svg" class="icon"/>服务设施</view> -->
+                <view class="section-header">
+                    <image src="/images/travel_tips/service.svg" class="section-icon" />
+                    <text class="section-title">服务设施</text>
+                </view>
+                <view class="facility-grid">
+                    <view class="facility-item" bindtap="showDetail" data-index="0" style="{{currentFacilityIndex == 0 ? 'background-color: #b1e2a4;' : ''}}">
+                        <image src="/images/travel_tips/locker.svg" class="icon"/>
+                        储物柜租赁
+                    </view>
+                    <view class="facility-item" bindtap="showDetail" data-index="1" style="{{currentFacilityIndex == 1 ? 'background-color: #b1e2a4;' : ''}}">
+                        <image src="/images/travel_tips/guide.svg" class="icon"/>
+                        导游服务
+                    </view>
+                    <view class="facility-item" bindtap="showDetail" data-index="2" style="{{currentFacilityIndex == 2 ? 'background-color: #b1e2a4;' : ''}}">
+                        <image src="/images/travel_tips/boy-stroller-filled.svg" class="icon"/>
+                        婴儿车租赁
+                    </view>
+                    <view class="facility-item" bindtap="showDetail" data-index="3" style="{{currentFacilityIndex == 3 ? 'background-color: #b1e2a4;' : ''}}">
+                        <image src="/images/travel_tips/guide.svg" class="icon"/>
+                        轮椅租赁
+                    </view>
+                    <view class="facility-item" bindtap="showDetail" data-index="4" style="{{currentFacilityIndex == 4 ? 'background-color: #b1e2a4;' : ''}}">
+                        <image src="/images/travel_tips/nursery.svg" class="icon"/>
+                        母婴室
+                    </view>
+                    <view class="facility-item" bindtap="showDetail" data-index="5" style="{{currentFacilityIndex == 5 ? 'background-color: #b1e2a4;' : ''}}">
+                        <image src="/images/travel_tips/charger.svg" class="icon"/>
+                        充电宝租赁
+                    </view>
+                    <view class="facility-item" bindtap="showDetail" data-index="6" style="{{currentFacilityIndex == 6 ? 'background-color: #b1e2a4;' : ''}}">
+                        <image src="/images/travel_tips/vending.svg" class="icon"/>
+                        自动贩卖机
+                    </view>
+                    <view class="facility-item" bindtap="showDetail" data-index="7" style="{{currentFacilityIndex == 7 ? 'background-color: #b1e2a4;' : ''}}">
+                        <image src="/images/travel_tips/toilets.svg" class="icon"/>
+                        卫生间
+                    </view>
+                </view>
+                
+                <block wx:if="{{currentFacilityIndex !== null}}">
+                    <view class="facility-detail active">
+                        <view class="detail-title">{{facilityDetails[currentFacilityIndex].title}}</view>
+                        <view class="detail-content">{{facilityDetails[currentFacilityIndex].content}}</view>
+                    </view>
+                </block>
+            </view>
+
+             <!-- 交通攻略部分 -->
+             <view id="section2" class="section">
+                <view class="section-header">
+                    <image src="/images/travel_tips/transport.svg" class="section-icon" />
+                    <text class="section-title">交通攻略</text>
+                </view>
+                <view class="info-content">
+                    <view class="transport-detail">
+                        <view class="detail-title">
+                            <image src="/images/travel_tips/Bus.svg" class="transport-icon"/>趵突泉南门站(公交站)
+                        </view>
+                        <view>
+                                <text class="transport-info">步行496米</text>
+                        </view>
+                        <view>
+                                <text class="transport-info">公交: B100路, B103路, B165路, B52路, K102路, K128路, K28路, K49路, K54路外环, K72路, K82路, K96路</text>
+      
+                        </view>
+                        <view class="detail-title">
+                            <image src="/images/travel_tips/Bus.svg" class="transport-icon"/>饮虎池(公交站)
+                          </view>
+                        <view> 
+                                <text class="transport-info">步行550米</text>
+                                </view> 
+                                <view> 
+                                <text class="transport-info">公交: B100路, B103路, B165路, B52路, K102路, K128路, K28路, K41路, K49路, K54路外环, K72路, K82路, K96路</text>
+                           
+                        </view>
+                        <view class="detail-title">
+                            <image src="/images/travel_tips/Bus.svg" class="transport-icon"/>
+                           趵突泉东门(公交站)</view>
+                           <view>
+                                <text class="transport-info">步行812米</text></view><view>
+                                <text class="transport-info">公交: B103路, K109路, K109路超然楼打卡专线, K1路, K41路, K51路, K54路, K54路外环, K59路, K66路, K82路, K85路, K91路</text>     
+                        </view>
+                        <view class="detail-title">
+                            <image src="/images/travel_tips/train.svg" class="transport-icon"/>
+                            济南站(高铁站)</view>
+                    <view>
+                                <text class="transport-info">驾车3.6公里</text>
+                    </view><view>
+                                <text class="transport-info">经四纬三上车，乘坐K101路到西门，步行970米可达</text>
+          
+                        </view>
+                        <view class="detail-title">
+                            <image src="/images/travel_tips/train.svg" class="transport-icon"/>
+                            济南东站(高铁站)</view>
+                    <view>
+                                <text class="transport-info">驾车4.8公里</text>
+                              </view><view>
+                                <text class="transport-info">大明湖东门上车，乘坐K54路外环到的趵突泉南门，步行280米可达</text>
+                         
+                        </view>
+                        <view class="detail-title">
+                            <image src="/images/travel_tips/airport.svg" class="transport-icon"/>
+                          济南遥墙国际机场 </view><view>
+                                <text class="transport-info">驾车37.3公里</text> </view><view>
+                                <text class="transport-info">机场北上车，乘坐K921路到燕山立交桥东，步行270米到燕山立交桥北上车，乘坐K49路到趵突泉南门步行280米可达</text>                
+                        </view>
+                    </view>
+                </view>
+            </view>
+        </scroll-view>
+    </view>

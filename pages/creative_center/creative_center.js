@@ -1,0 +1,88 @@
+Page({
+  data: {
+    imageUrls: [
+      'https://th.bing.com/th/id/R.380b6887b36371712d1964af69454dbc?rik=%2blYomL69Sk%2bxpg&riu=http%3a%2f%2fimg02.e23.cn%2fbfa45bdf5967417ca3c277609dcd7a7a&ehk=Sf8pAcJeTR%2fLbMTnyDHS4cntdZyXWOtwKiY0jxPXNDA%3d&risl=&pid=ImgRaw&r=0',
+      'https://img12.iqilu.com/10339/sucaiku/202011/06/20201106062110wfqoWk3Q9Q.jpeg',
+      'https://img.qiluyidian.net/qlyd_16440645051644064505899TC2nH2.qiluyidian?imageView2/2/w/720/q/85|imageslim',
+      'https://img12.iqilu.com/10339/article/202012/09/c92ba674a4da1a3ea02c8ca4f6cb6ff1.jpeg'
+    ],
+    products: [
+      {
+        id: 1,
+        image: 'https://th.bing.com/th/id/R.078c0d2f41c99fcff7bd89d1e95e57e1?rik=srMBYpT4KjJTsw&riu=http%3a%2f%2fwww.jnwljt.com%2fuploadfile%2f2022%2f0919%2f20220919112936384.jpg&ehk=%2fsJqcSxzRyB%2fiS8mnivCjpi6hxbvgLNgXZrHhWK4tZU%3d&risl=&pid=ImgRaw&r=0',
+        name: '文创雪糕',
+        description: '趵突泉雪糕，雕刻着泉水涟漪与古韵楼阁，舌尖触碰的是历史的冰凉，心间感受的是济南的情怀。'
+      },
+      {
+        id: 2,
+        image: 'https://img.zcool.cn/community/01f0c05c6a27c6a801203d221c9386.jpg?x-oss-process=image/auto-orient,1/resize,m_lfit,w_1280,limit_1/sharpen,100/quality,q_100',
+        name: '文化书签',
+        description: '趵突泉文创书签，金色链缀梦中亭，书海泛舟泉畔行，绚丽彩绘藏书情。'
+      },
+      {
+        id: 3,
+        image: 'https://cbu01.alicdn.com/img/ibank/O1CN01zPrGRj2L5B2PeZ40b_!!2217809519640-0-cib.jpg',
+        name: '冰箱贴',
+        description: '趵突泉文创冰箱贴，金鱼跃泉映古亭，清泉涌动心湖静，冰箱门上济南情。'        
+      },
+      {
+        id: 4,
+        image: 'https://img.qiluyidian.net/qlyd_16440563491644056350115CTHkFd.qiluyidian?imageView2/2/w/720/q/85|imageslim',
+        name: '特色饮品',
+        description: '趵突泉文创饮品，缤纷瓶身绘古韵，泉水滋味沁心田，饮尽济南一城情。'
+      },
+      {
+        id: 5,
+        image: 'https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fimg.alicdn.com%2Fi3%2F291612614%2FO1CN01HDFOAA1VBG0Ww1Uql_%21%21291612614.jpg&refer=http%3A%2F%2Fimg.alicdn.com&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=auto?sec=1721731441&t=8e5e1a8825470540248bab9cf751dd44',
+        name: '古风笔筒',
+        description: '趵突泉文创古风笔筒，檀木幽香藏画意，笔走龙蛇见古情，案头雅器寄心思。'
+      },
+      {
+        id: 6,
+        image: 'https://gw.alicdn.com/imgextra/i2/2368317748/O1CN01F7Au4z276dfSrvpRC_!!2368317748.jpg_468x468Q75.jpg_.webp',
+        name: '纪念币',
+        description: '趵突泉文创纪念币，金银凝刻泉城景，莲池泛彩展古今，手中一握济南情。'
+      },
+      {
+        id: 7,
+        image: 'data:image/jpg;base64,UklGRhInAABXRUJQVlA4IAYnAABw/QCdASrUAdQBPtFkqlCoJSOipXT5oQAaCWVu5ue1qLjg5AST+GYP9XPThIzx753/3o4fprPn9247u4t84fnU+cL6W/U/b09j8D2/Yr+ndfjgb+d8Ffj/67u0H9p8Q7rk9vGEc4Uw48OP6D/267l/O6KH/383X75/7hvXCg21K1LJMNdNtk66c/yFMzMzMzMzMzMzMzMzMzMzMzMzMzMzP6iXCg21K1LJMNdNtk66HZr2Hc+1F/g22Trpz/IUzMzMzLWoWhRpHhlPpNbd4wQnWhTyd1A/LhQbalalkmC/ulttSbwbPb1bTU32XhLF2+3gStfXu2Q52eg21K1LJMNdNry52hrc9hlN3XrVuHXaigskwtk7Tn+QpmZnuI2jUT1goU9vDk6L7M6c/yFMtbA2Yr/xdO9thZZ/9GQYz3CB+NvRXVqWSYLP6sxmKhup/5LBg833hbj3OU6UzdT2MrEdk98SUJe7MLkHHDd0EamQ/pHqiXCg2pcPIBnxWqMNLUQMiuJNb4xSH6kUMnH09TV7n0GAIerFw9VywWfQ/vHHDd1tsTOXwXQzJ0ya3cVz/Uxblwkwy+qak9pDueOnJLoY/AjIra0kihkgKzQpTraXMDSf9Uukkgx/Suz+Dhp6mf4CzPBB/oafw5pj/IvKi8KkcACeayLKgqmKYX2hhe6KrmartIZKePn8Y9NKnXr2jP+aeJLQ8l+ZbnC/x96TVYjbHEP4VYEaLqBaD5WU78eVy+8HkVSEh6CCBL5HtvZ96b2fneUhn4aaH/5SjVc768a/aHwwJNB7ynv7Gw9pgSZYXF2Kzb3zqd76Vt0yVsO9uJ6K5RFUUJmzU4/YlDxE9JXXVwSm0zBx3Ptxo0HmIu6uZhV0HYmSUbEuum9oa26U81fGExQRtCnWuPKxTtcPbnhB3LDgbTbHDxhq9XFL+2dhvoMHhaN5m39r3wAc85XUWGai8bUp1a4F+HjLu4hc/KldDb8ztMauIx5QpqjxAKJeK5OvzVAnb9iYuhg0UFGIW8IyaIT+Q7IlXFjCS9N5hZjoS3wEaZarWrPI/+wNwYp30SnKmXVtsY0y/3OpC3AOg0JkE36hbXyPssd0EnEy3mPt3Wjuf2kaDv3Y1pHye+TylTU+oeVSSwXLz5lBZDP5Gh5OykH80dSm46M9pibv8lPgpuLe4ERfPZLbt/5kDFCjYahCXcrh1v++4DyMPwxZTLTjcu0rSxJG8eb/GI195n4XMFO6RXvgt+72k/Yz7Rn5p9J0AvJDMTL9MYl1RTySq5X4DZ/1PIiN3crNLbXOx9OnvAafKX2aebFUJ6GANUk6rEHcm7eifX53PfuAGfdl9cFRBc0zseGtd3cwR5AnNp9CHXHnCyFnu7Z4mxl48zXz5qUamzL4y9WWBGXCnOGLp/s52+fPdwEiee2g5+q7jO5GYhUKYrmokEMsVzrW8QNUrxXMcVZwinFHfejbGVNat2Un4apcJU2aXe0huy/dr1nIN4CIvkF3RufzAp5JFBQziTYw8zZ0a8pL/JdizBLArcg6dEblPSdt9LxFEsfW4711ZkeB6D0kGmYnTtlMIhe5FbGlW2RckQdC7I+vr+K+rtiv6AoOT7WRcoQ5XZG0T+auvKSsrwPiWRJnmVgLqvuWWb2pUiTQ7IQVqsyGh+jJ5/TRBjHmM0r9K3w4FZVFnxJR+CCq/U/kcOqjUwTThlOHVGIe5ck6+phHwgjRK+fm/ZEkb2fbiP2SDjRqyuf6Z+FsIiODRSKowC6W4NVou76Xz5e6qRvjYubGZfFuMO9hZxn6maiw9bp5MkWZ/7I+C2pMdzDmzoNEoB/grgcYjR6DPxFeD/dcK13FSk6pdq5+fNK+298GP9I8x7l01sXzQj7UcJk9wih4n2GgBgOMJBzXadLGsYrdsKw/2wtIS08dqlytyLYsPqtVoabWs/ZRjpJcpmY+A/9D+tv9fslKhTXqQ1jAF8ECT/NPN9/jru3VI37q0L1vkTtyLqQ8cI4m9WAPsRfr/i5Qzt/1LincwScrSnH4rRAnfjS+Hq/cDwKXOStL1vxuFSyq+NXkeyzeu655hsEN5ltIYt4LBruw6HKonmLF/ZQmAjTB6XKPeKsAOp5y9cmcYvNOEwPXx8iJnH8iayxw6GORt1oJRsGNV75nX4KLo4uZQaOiLyyXI21PeGcoxU+miNC9YN5dFYtN28trRC70a0Jun3cwvauHBPZDP0gdH2aP6wRfN5AjeZnqsRaKIntelNX/wsINAQcLSmk+o31Y8lmkt/JIj/OoShQUVrOV660f2G/adat58g5Q7UGv+0feKkXEW3kmvas9dOf6sc6TMB8PNs9Igltv+KZTWjlUmyfvwqEiGPqV2M6P9q0Aunt8hoBGQiHIdNyq3Yfxrx9IndlmkeQ2sPdIOZgKREuFBtqVZNOARrzs9gpmGxQ/FyJEJSSYpiEH1nL02Thuh5BNgx3v1Smzi6kCi0thpKdACMIXsEIsF5kXaGKfujtfV0/yFMzMzXAwsa/pWcIu7xZaEILYX0SP4a4KOLUtUCxYFe7M5tn20rdEPDqclZGkvIx+0CjhQuMzrsZmZmZmdYSY5Cg9nK0kgAVf8RljxGXLaTzdIWbFht+hWnU21K1LJ0ToH9ZC4ofKwbDjVqbjOuxmZmZmZ1hJhrptttQc3UfnkKZmZmdYSYa6bbbUHN1H55CmZmZnWEmGum221BzdR+d6AAD+/b3X1Afi1oEyl4AAAAAAAAAP3g48AS9Zaajq3UZcAAd0lnB20oRY2+iLMkpmoyExNC3YJZtUUoheVKXFpEIHH0oh/hcAsvUYHPD5dkCNKwAABUYMNB5j+F/uZQmh9zsDPTAgAG04oEzo7K9xaxne2teTPZzeqoShEJpMPfQAW83A+Salqq3fVnk0xz2y1ojhNuEWzU0qmSm9c6jq7oTYcIAACshHxhV2v8AF28qyAV6V/e3QORBCM04r5+hZt8+hzH8rVKn109XrLgUUdTqUnFp5o6Dg7crjdpyLD5TZoCAwf8md+v3H2EyXJXIxcrLEJTzEcBjnXbKiawAD/lj+VoiQ8Hk6jtZEWc4Ad0Dc7J7/wWX4El6TWDeeAmmZPjQo6pWSFo0WJ1U+CzPFDIlrfaRMLqQbvfE7PRyyh5wCmd4u85yWaNVtcAmel96UuHXcF9QjbJx24m++Us5IrvtR/UlQoW3UYY1Mye3moZQwhDgBT4IFuKkGHkv7YjovPfXW4G+e21tEeaAANQBYASQDNgNj2fCCVZCCcwm/8jMRZJXqiX1K6yC+Dm5QCY+IkooDoMcyiQCuon0lKDKtb5LEoujRA06/t6ABslk1P4zD1ZLT8848dUYtVVWNcZ3qNk/PdKxQRcxcMOFCFE8hWHy8suRqqSLeCIqsfh4efc4ZHKg8RcRWB894R9dAuH1kThAX1f+So0O3C1Z3dzCZT+UmFPT7NfRjadH/KJY+uGW5wA+DIyQ99ITrpcHMRQoL8eDOa5KhdikH55n3dS7q8umHFtPuG/uyd95yvXrMztAgNi8I2j5srT3cavPNTqxlFUE3CVxOGxc6cqq/ruBzso1SoKrc36CdEA8q2QsiO+vapd2xuV2amX3b9cIRDXSp4M7IRSyBzTk5X5qhQcqDaeQq2Du/Ow+Y/Dn0LHIpLuSI0AVPR/1HPz3CMMPffUxMF+hlDWNyE+yl6F3avrIdgqzJObgtquY9mWox5mBAR2WTCMsvuJT1e6DTDlpjX6HwfNUJaonfnJ0UbmgeyViPA5v6hKU2vWCtyWDKYSZJpnYovBP0jLfiKYvMQjKBUKUewW6UHDt7mwjUX//D9GqCqwdZixt+OTjgmA+3yrfpMW3jhPXKTEgXS6gW828JEUDPAP+Xcubc5yyna+M40dIyyL42IHV/YPtg6zjpTqqerKOFOy93v82vd852uEifXgS6IB7wjmyWplzAw3jq6HURSvCYUfatFGqzgU5er2beM2D6MeYJJGIfRKkzY5+EcWlo8Jyu02PkmT3pOt8g7plciwcIeBFIwLOGRmPRDJb6q+BlPDvyVaUg67ntZT/NY+0a2xclKSfIWekKoLhdf8bak3HMQLj99nmkfdOZ+afWvv+OmtYhplR6Oum9/rwSKLXHX1PU2vJ4i1Pegna7yX/Dvx9+ipSTaYHx2Yve2gCOYmCQCUIuWKmF4wFGicExmVzq2D3pAt1NxPIcNBvCKC8LR7mzNjEqrpkl9DR2N+IfautdSANkojk85WCdOdKz7O2Kq4YJmXXAoK3NNbcwmkFvVR5dOL3SC7sgV40Dx88NzOYx/2tQVWqAbIGg0JwNnJKDtNSqUe/CqGDqnus57PX4sP8r4EC00ebTTJgxtN6FArSJylXeyxwwifHjd4+gyZs2Lmv89ZdFFHHvjYqQBBNyHpwNRe38msfvLh/zjDozutY6Puetk1cfvbJI2qrGWjPJVKqW20p5iCrQ/iwd33bYXdPEjOje5iekoVhS/fcRu/ElnGao5sOQe8Y7WjkVHPxg4Gy2MO/4ejbMDUvuUE1OA+fjRWpuRHk3AwNXcmMe9mjaa8LU3Dmf0ya9eQcaas1CRvLNTHUHIjJ+ciW78CHMJXQAPB0I79SbU6bJWCrS7o/eKvo6zbd5GooWGcG4BmwjLF7HpNnSXcT6nf6lqja0aTt+f4t0gMgl7PkhnhUyTgxPxQZfqIp3urbniMixJ95dj/TKFRVHkSJCCU5ksEcOC6Axsc+3wrKzaGZoxBvqGeN9qn+zuZYpga9XkH88ZINrmN64KBVNtWSt1YW0Nn5HRsmAXiSVxGf4LEm36SYkrrgw32572sSRMXmF+Wcwo/hXH1eWLGPSpWX3XAA0SHFGBo/mDoPIj+asnKDmzVMzPAAhVluSz9ZyrsmS6HW0abEj4AdBfLMmikJfa5IGbR2qFxf4T+F+T6dlIJkGvNlEXcbmsNllnLyExp2dZjEz+QP0Rrrno3BkGhdtfuMLz8G6SK+YN00DSr9qKUvyMMe3dfk9RoudXWrFWXSCD3ehMayVUR2gRL9zNL3pIag0mHwu/GBEzsc4Itp+4bBw6jVNty7zKfkevFRL7X7zZiPiZxWAPJ6OpGBs25gqbzTiM/XzeJ6EY+6B6MPlL7Lmj8a69AXwdCqpDDozlDIgLJggbJT6+PCesbWfdk6CZkNUmMfz6sJ/TnJkh+4+BGIXgpkxxgocZzEIK9Z+m9TFS/vGXA+rNUxQqIQtpsN0AnONcGE+c6YTaUgRwOrwDFox7lSfAsbiE6NuuZV2KWFsG17V1d3hFIMUkOu7GY002jjdOhorIrvNIDgT6HLkbUYpSW3NdkBCJYPcIZ6Ie4XHCXx7nD+RzndzRpF7FehWxNXicEk8hUWeXGcfDiJQV2TPsXDSkOpLZltAX/XtomAtPumah7tbvW7XukGPmeGfZMW8x+UGKStULPr5CZINkWgbLv7WzAC1OTsMKPSrjPgr+dDVpkuIEBkzrGXbilmIbmD60wmNKrUuHIu3QjyQ/8IMqB7t9ztHErdvRVaMbSIfMazECo5vBmFyceZW8qwZSrYATE15+6EGRLe0UwGQZnq2K3frxd13nwwFpgpMwriOoH3sM8zcvqlJocviGtAhtRZkjWwAYgny+fQ0lRZxGmAB+11sRv0bOCw03aJYEmBjlCOS7EIpaQ1U8WvFOgo/QsosIpPicJASFglySD9fKcLOcOho7EADGMpdyJNHsjOkZqGAzngaqaxkWERsdrwpa/ApObDpgvSZPN4IDrA3qXkZyFzkVkpzIkVBxHQAg4q6jXO2yWl0hS7BaszsbtxWwz+OsueaYbO7LBx93vQ70H4/7SoUpOndDpAQrMVTGs58hs1ccXt237DdsbHzpyp4QFqNES9fenDpvX3/oNLU4NZGDNXdwZtp40I7SURJIaYJCkBpjloFBJWz/Axw8ds7H0W63V5bek6o7SoMjrStiJ4Rp2qDdrGupIgOtxjXFWZTvBgJdbCa213sIQ8Xlzh0MQ3b7wdjMfqYO8Wa5p1U9GbvAvBxtMcv/kn7ir9BTOzrKhdDwBellvnDs4d+QMYQzJM39wv+HPO6APv3VlBgBDyx16X8oyFLhJRjqyHjaLLO6A4MU5RausPl4lfUZnL5tC4MDBgXOFbIGuUNsAUvGAkdcrSjgTIaMgAInKceag5MCqP0IEL4f0vF7PP4JVg3eK9IzvHywMnKO+lk/kfEmJJqDbDsASlihN46G8jBGz5uK+wlbl3v7yYjoWy8CarN8EsSmOQRqpWlwsCwzMOr7uuLoTJ6qUlvj39qTlHxl+/YydNhfRV6ld+oa3amHtAo5XtDaKDxeuZLQR7ZVwjelS9lPa1hDBHM+H9omsDr8G4Ki0+bmfu47v8FQPF2mm2jv4/lLDvdwf7HYXhC6FWwLSNwqWC+or4U1ERzU/FkcYES7Jln/vJnEYZYup80FFqA8vF3GZCH5YnQQ5jYJMgROOgvpt3l4o85IRWJMNN3RCnfte4yROIp8O66UJVYlpOgfFH6jG4TYgcqWLNqe/91pLLQqDYGA7II6s2SLclvKWeybDd7lTwbnf402UGOe1O4LBv8O8z8u1v3BCicCOSjBPNznEVayYMkeZmZ1lAKI/hwZwuNQQ/aTX7Xt3Gkp9YWSln0KF3z14CYbJmsRuO7qEHDjri9Yw53xuXioZNOPcLOBiixcD0ri3MBlyY4AuGAM+1uUpEEfmMMTE9OEuXseJJ6Abgu1TzZDln+mq0YEgp3Fk2CTWzfgfU0B4KDurnpXou5hwzlA8gx/wuhs9jA/i04fap/f+Dttp6JuGVY9Up26VJX3jFORDfY9vn4lc/gpulOpYtc36MiT77OPvemMMZPO2D5ZKxyhxKRjp29kYKdXWDjG0cuGkXHM29zFdfTBGSl+X40+nXlO7BnGbsC252wz/P+MOMlWs9N6HTekp9cN+5hq9KiOrYrKK7xa/6WfsnL4DiThYJrkmhi1r7bqCtdUW7Uh3ACSjk/0A2bCJgfUc0Sm878scyP5kUi2Qc6i6WErpcfYo8be0pzlwhM+6ZWBagYyO7kVaweHMyiqPCr3Y0IqkiQKdQokFNni1Hb8LjVSzuPEtYIKhT0eZeGv5tXihfWmUuytMMivywfAeucXVLGZzv05gCM2lDEmi23Q7kQl6iNjfZhxVPwbANK/MAtYEcrGrzGZqOe8AGtPZ3Tdxmk0K92U4SQnn7uElQDmmx/lL3GlMccVR+anLQruFC/hqo6wjKCt+JBvwsMR4H2uDWH8Dx7o+LcOxsB5v0jMVF4B6IBgkg2sTX/nX+AC+Hk1PcFWHOb+XD2f9B0KsopTnGoKPZKbOQlErFba8XUIiSsRDXedRrv8QhrnVIENkCUCt1AbhZ/1u1Eu22P3J9TCgmagdOiJykTskPQSC+pu5EhZEq9c6AIO3dKEuwWUX5iXTs3qxkTRwqHVt/B4i++Z05sR2w0v8ohfplWdM4EOSfmLmEiaynInxFbRURVYVzYFLiYleslo51MpYDhB9cOQIz08sgyAL9A5ClsPyAq9hZvGi2k9tftT7nYY5ssA+NEQAmEnIZ7L8luLmC00LlJ+9gieus2bILaPf1/8CcDK4kHaqgtQtR/RcNTXBwmobzkCquxo5p7QpD2Zsd+8Zpd7dbZSKSRqm0cdcJMxQJjAVTBY2iVr6DY9mZLcm2ceook65o20J8t6tOBsClCVvBTfif7su/plx90bvovomugpVpBdGyj8qQveMzymw2RhYv/jyao6j9eJIaVOuuJeJ5nE9DOqwkFt7od4q32PLCozisUjHZmIMZsfU9r5x4OvrkUlEdQ/AeP+MGo+lTqxiYaUNs3T1GSbQ1kGO/JCPrCqPtmAEq5zeYTbjOyrktq2L5Ya62Bd3PeeQbA4rK1v0/7x+8mydfVWfby1J9cA2st3OvtUNAMt9She3NIh+1yOHR5WMmOPQcQGlRg6sqhTw32CfUnMyRa62fiQUAy2uj/134J8G97kr+4laTGa/Hvn92+dHBfywX19lzUUQmpEpoT/cjO5ng+vYbAnYGIvU18xsRmPKqu1lvO4rivweenTmuF4jAvjnkT3Chna3Aaq1urXaMi9Uhlnz+9hYjO6WT+QE5PhqKARvjFuof2d40Y5RXyq7y75Jg0UvrirSVdS3lHC9gLyil4mLOBTVgF0atQujuIbZZ18r6Rgr6cyv1Yu8D+PhwLsJd63hHbo9xOSQwDHkN5S6LbTWqgEqxwYjzCtw70tCDXBD+Qy/Vs3hqQXX+WYiae25LUQ7U+VBzq/bTUwIvdRrGlRM/LNETRHIm9zMzvgKLhPq5ZaJad9+Mi8bDyAngQKG1OPoeS+g0en4hka1JFZG7BEtCbI+9tboI3vzIuzWcZkhyhY3jKFszR7r0tkt46tQAJWSn1ahCss+ekiP3TCv2zWBp8f0N0uGOM+Jlpqu61B3Bfw1XzCu1BzQGKmNgN+bjcDOKcgPB59fZC11Ykbx7Pk2/nj0kWqdqtYa547iyGZHbIkSq9r+6UeCX17geS/JgemhOiwoh13CNXsmTR1OVMDZbgig7Q48sq4xTXydiR1gA6oFVsqwRM+gOppHk4QAgQbtmTpAEK7hfIfzVm3HVTZf1UszqlQSQRoIzI2h9S0/usHVgwJ/6zS/ZQTIQ7O9QB+jJovutJgvmOEM0tlV6bPCkfDuDy7s5fsQamzl9sPpfhpAsWe2L+O2v64Y3aZV5Z83jh3gMrGP/08iQiNEbWaqTPFyhQY8AOKp0rSn9PKunyuklFTxJ4oAi1vLWlf2TQIN43Q/n2fx48GQZpf05h7arfZVxfbl/P1lgu/KxpkWxbyQCxc33DWSSIFeJHijXvEczt5i1Wex/dZ0dU2uPy+aR2BeSi/D/LCFqiBtX+eCRrcCW+jhUSVug8t93XGbCuhb4A8D9M02y7eI5MwCP369kxaemfwkntN0sBBFkC9WnJ7ShtrXwgjkRxh900eTIrR3n6f1vaw34u99eTZGvFwb2tXxnhkcs3QwhBtMR68OZXRBP2ceMptC0XkmSLQxneYIr31mAKnjUlpO/uMMvMH2m4MlWb0Ns/SGb2zCf2E0t6a0u6OeuVeHbmtBV1iSLqgVT1cpz8ZUWfR1LGhyAp07kwqKknuZlT66ggR6gx+lsxtnXX3U1ElbAeTm7nA29BJjN91UAB7uj/8LpDw+THbgEUBMneSOsT6RJ0rycBzN7oCKCE7QdP14+PZ025VAqdSocwaPr+eZXv82+ohJK1wRmAggZUO14s1mQVLzdEfvePoUnHRfFMROwtPRy50XDX0Av9GnLG5HJqrxs2ofXwxkDVwNCRRSHaFrY3+DEzCDhlnXLxonfUHhMJ7coTCHy75/k6jzXx/8kpq5k8xTm+wmfSkqa/WbHAKHOfCZR+OtSyFZLOO+eWSr0XjA8TyxSkU8OKPaFw7oDwW8Qc2tpBx3XLvZka0klrK5FMBYj6j5co8VyYjNXTiyPyPoJjDKPgzhuvDxF9//xAtH40Z24mNjuQRaWrlLl3YY0WD+WrF7l7EJE7RVjpvQDcZHH3LJYwaXBCfPtXkv3LDnq5Zjnt3zjVItRGhmBvd2LBkIvBVrrhinJf04EnIt1noKSFkCQKFu19BDb+ML0YFxkEV7KJktn9o1mDDZlSFvxZyHvb59/kakViJyokPvPZ0iUwchqrBuHtHavDDV16wTyKTFLQvkGHLcoCfcsaBuXTaceyexqoAjDw6U5G2hxyW0YpMH0mADjreAXqC+B1EhYjKRSn4GzNK4RdnAPwo4hGWKAoB4ihql+wTfugJfPS7blSxjzJaXA1en+gBdLG782v0QDA1pQdtzWbRC+xwxRBsdjV4BlCX8Lg+I1DD/tKYgOF5SyXxnLrGIWh0iLluACwhPnyGo0tdAYP47o1cbvNGPwoACt2Truxu01kL2PcA9uFWi3dnsLHi4IZg/8Icj4Ff4/boMINSIbB9Bv6TmpdzJIaxMRQKBJ7MlSwAQsfozmG+hcJJMfxWy9fVxggU/jKCxDM3NB1xuZ5Y2V0r/1ceGO3V7NyiRCpQT4hEZhGtbhxNmGPQZRgZJkqm4paLVIqhpLbdrX++pnwb0eiq92sUgQHFT/HGQ2zKov7xKu+AkQm1JY3iaT+awl9r1s+NJBzhokmMF2q6WR23w7e8FagwATiSs2acSNvjVttISGHzRfbjfJh+iOvFuBi9z8tIlateTOTizh+Ewga5L1k6JTr/2YkomKdDgg8x1JmkqvmXbf7SsxydH0+I/bfBVMJT09XIgSJby8kH0lU03Zn3UEEU5GSzyjY/+jTVesUfSuJErVKy6FxhwM86ra09tID1swehtUnTrVUYSmc69CguL4Jbi0zKrM5Ozn9UI+errLd3SLFofD1W+/0WH8PfZFZp7hyZIr6nyCc9SKF8S/84yztpvU+9oIc0e8Jspk/15Ei+PB6jYuFJ5dXq6JbCoZdT0bXnxbDfV0SeFhL7yo4m1fFrncbgvP/+fnZrymC76Vq2QWkwyjHYU9Uq0uweRoqu2oJ353LS2cKXy25gtTgDmQA9DLcxFs37+DbCO2iDpm3v5BC+gmbAhXH7oc6AxR2bkToDS3pHTCef1BqHLlWHrv/PSxjJiY5zqdK11z1cxDNV5XHSmbl5U+qyH0C0gSwojX2WYbC9/oKpc/Os4U7+Oalgl0eFI2bPl/KHnhe/9MU7CS+zYpYQy1xgFG4VMdo13BMcPSrsNDBnt7I4FIwEstLXDdNtczOdvN5lCTJy93Cov+mXY67UKmKw732nkpznpOVhNrfK3bYIhTK7s8plfT2NbfRcxMLzznviBqisw7ltrfoQLGt53egh9Q1wN4UxlO4xm2QkzE6Y0Zg4OfmuGurcCZ3NE3ljB0JapCCwtSrhA6RWxYD1ht8IonefUeSDsYnaqDphe49PSV9B5QQ7qgEXF/w/1M4UrlDV1f5a8lCxrpNqc29egAso/NSDxLXgkI44POR5X5ALno3Ce/oWqpxrMFVhcUQM1/yTzsOZd9NRcoQO7PhLmOnKnUuhFZ5RVzIWjzp2j2FuYcAO65KtIb+tOJ48JO0thISwhJ3WYsdxyI5o0hybXpsz7j1B4k8kgTx+sPYXKzMNB2jT7cw69X9MAMDHA+z2QoHR6rfBTi8jWM/+8+IsRyC+1E/D9pJYl+cnrWkxL+sc9VUvEadF547B1eyXECTiL0JvbFQvtjMoXZmlXwsNEZhEDyZKFZF/OudNGxdwCPSuwFzPglmWnICZCaUj5ffxCR+bSOMieNpjIZITHr9iLHMiDuhRlAW6z1j8GjLIPkOJaVNsQJMVc1D/QRvW+i0CoaTb/IrivQmX/aaGVx2RRXpHcikvGxVcPMrOUHu8Z0Ouvy/N5pbwvorva4EZtk6Cgr+fgRVpozZGy/aThcMsL3lhQP0aWxvL2O9RJGKo3RjckId1coeS8jQmOsFkEDkcBKzsvodKW/o1iBdhb9d1xPCBYbcq48uVnuXov+MpSv1QzkCxYZWFxXs18P5OVSNIT/ta0M0Q50WNfyFHlAkmakscbNgcvgFiY9Qbtdp1dAALd8RbGF4Kp+UGM+yr/zF2IBtNyAXRTEZwFJo39CHCK1vVHkBehf+rbE9oH15oqdBjnHJLcoSfatnI0TgePjLiyr4AqOX0PSm35cSEp2EzrU1w5C1NtE37y4T4mf3H4pHMlyCSO2rUlsrBXmahHZW6XN9FcVhANHXpR3tNttvlUBOu90rcJQcYUjYQwioiYMYMW4ANq7+JRNNcrB+ndx11TDM/aGd0qiLyl/NLX2tSYuvvAKriciul7OhLUIEqqL3v3s+odffxc6MV1bcIgIfDWzFzBN/rAaVrNCPKJ77WY0NGQAVbXjkOaVYQNTdwyqM3z3Pvs367Ybozr5lWm71r9gBmvGyHA7iapYOaXrnBx6ka2+G3KZZPLZ5Zwn1sVRrQHqGQxplgrcWJrfy2hwlmmURALccT50AhwCSYfnUSOSzmy1iMiDil/lqETR+2/8Na1hrFbGXqsFqJDGyi2Zk0sGbM7wIUcjthsiiQs2Dzpo7o0QqClVUeCGIN2kyDv36duxMS8I+GaIq5eOZm/zPDyUpCeSNnah2cM/Lex/e/d1IslzuDh59R0zPrVFTEfumrmk0lNW6s41ic2GFg6YgaGkXpycMgKxlbcFS837HyIgVL/AGZZmZcEgcEWOYMEvbxWHu7Kb1Kch6mC6OxmNxPS6VNzj5FXnRQOeHScc5oFHdhhZH2jNgRR3/qJA7X+9v+SVe2Qu72wvLNpfYv3ok5mbZganAPpn1iZsKkXsJRud1lzjByqzXyhDQTmjHIH5ZEej3W8TcaEZH8UgSsYUQnwo1jpQyLgGO44fr+0ykih2a/XrIJJQ4d35Dq6bTJsjLXFgvM/RCq6kfPORYEDR9Y539fu1TnETs8WlDcdiJbhQSxuzhbn0ECYj9qBoLtJepIglEojx6XuyTL4ka9PDq1GXNDjzo9RndwjSpS/peQCbD7ZQewAARg2kYwgSmJOzhFW8gt0nmkLSuFNmfBgfDrOweTxIaEQdMWYRJhTdnuruh3e/CXAw7umy32fqivvT0XPT2YOPYxIY+90jG4tz9gvPBY10AXqVmGJX5bXElt09R4qYg2Gm5Qv2h9O8vEl1JNOEx5qEiXAzqQxY6PbChiK0EfSofnxL6H8OSeGOYAjn2hYkwYWnBTiJZwxwzjF6h39xTAqrxgPZjcgZiNzBtVGXsAAAYL+fApphdmg1VBST3fk1UR6SI7O9pYlYnymxgXxuFvRddQNgftfBO/3bntUwBvB6uSkQD7jWboIM3Va6NiH0m7y+upxIvmh0Ktn/GXbcVIOnuk5dkROy1I7E5IiWN8ZtPkYcCs07p7YqLaJLoUqFAd2KHJPMgMoGd35Q7WXbeexqn/zSiqZbqIcJ+aGQy8nu+WG/gy1ozPxcvLbDYcZQQv9pkFcXlG8iXXCyw29OQ3Y9gh5vyQalmjw6WlBKll+Y/w6S/4TgztAxRUJooXIQAACWOy8e7mDBv8vqk+V/Tb1p9OuEMOCw9SRNwFZT+STbazp7auEXBrwBMKdiiecdg7fU1QxIoydQOp08BXSzZqLiJIVpuaueeklUkWQr68AxSq/A+KvwA0nMh97MGcsngBFjRv/apZHgb5mJJKsr175Oh26hkDuQwQe5h+SN9FTXS8he2TeOSrliI0AAAAGoah7IqdDIHRnzCODfTKd3EDBnxB8fDPvUR8cI1iR70jxLdN6RpbIQ6l6PSiSEcPzVYq2/OeglvqL/UM/Mn6rpwOtgAAACzEtHH9qBtI736BQAAAAAAAAAAAAAAAAA=',
+        name: '明信片',
+        description: '趵突泉文创明信片，一纸绘泉城，千里寄乡情，片片涟漪传心声。'
+      },
+      {
+        id: 8,
+        image: 'https://gw.alicdn.com/imgextra/i4/313983332/O1CN01q34PJZ1aU6ZxgWCXj_!!313983332.jpg_Q75.jpg_.webp',
+        name: '折扇',
+        description: '趵突泉文创折扇，展开清风送凉意，收拢泉景入心田，扇动一夏泉城梦。'
+      }
+
+
+
+
+
+
+    ]
+  },
+  openLocation: function () {
+    wx.getLocation({
+      type: 'gcj02',
+      success: function (res) {
+        const latitude = 36.6581; // 店铺的实际纬度
+        const longitude = 117.024; // 店铺的实际经度
+        wx.openLocation({
+          latitude: latitude,
+          longitude: longitude,
+          name: '天下第一泉文创中心（趵突泉店）',
+          address: '趵突泉南路一号趵突泉景区内婵英祠东',
+          scale: 18
+        });
+      },
+      fail: function (err) {
+        wx.showToast({
+          title: '获取位置失败',
+          icon: 'none'
+        });
+      }
+    });
+  }
+})
